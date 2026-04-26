@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css"/>
+
+<!-- 
+    RTL version
+-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.rtl.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.rtl.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.rtl.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js" integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Онлайн Квест</h1>
+        <h3>Завдання 1. Ребус</h3>
+        <div class="description-header">Опис завдання</div>
+        <div class="description-content">
+            <p>
+                <b>Ребус</b> - це загадка, яка складається з малюнків, символів або літер, які разом утворюють слово або фразу. Ваше завдання - розгадати ребус і знайти правильну відповідь.
+            </p>
+            <p>
+                <b>Правила гри:</b>
+                <ul>
+                    <li>
+                        Відгадай 5 ребусів за 5 хв.
+                    </li>
+                    <li>
+                        Якщо зміг розгадати - переходиш на наступний рівень
+                    </li>
+                </ul>
+            </p>
+            
+        </div>
+
+        <div class="rebus-img">
+            <img id="picture" src="img/rebus(1).png" alt="rebus">
+        </div>
+
+        <div class="answer">
+            <input type="text" placeholder="Ваша відповідь" id="inputTask1">
+            <input type="button" value="Go!" id="btnTask1">
+        </div>
+
+        <div class="progressBar">
+            <p>Task proggres:</p>
+            <input type="text" value="0" class="progress">
+        </div>
+
+        <a href="#">
+            <div id="nextTask">
+                <p>Наступне завдання ➡️</p>
+            </div>
+        </a>
+
+    </div>
+</body>
+</html>
