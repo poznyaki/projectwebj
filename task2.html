@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квест</title>
+    <link rel="stylesheet" href="style2.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css"/>
+
+<!-- 
+    RTL version
+-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.rtl.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.rtl.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.rtl.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.rtl.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js" integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="script2.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Онлайн Квест</h1>
+        <h3>Завдання 2. Перевір свою пам'ять</h3>
+        <div class="description-header">Опис завдання</div>
+        <div class="description-content">
+            <p>
+                <b>Гра на пам'ять</b> - це гра де необхідно запам'тати і відкрити одинакові картки.
+            </p>
+            <p>
+                <b>Правила гри:</b>
+                <ul>
+                    <li>
+                        Клікай на картку щоб показати її.
+                    </li>
+                    <li>
+                        Запам'ятай цю картку.
+                    </li>
+                    <li>
+                        Відкривай наступні картки щоб знайти таку ж картку.
+                    </li>
+                    <li>
+                        Щоб виграти необхідно відкрити всі пари карток.
+                    </li>
+                </ul>
+            </p>
+            
+        </div>
+
+        <div id="start">
+            <p>Start</p>
+        </div>
+
+        <div id="gameBoard"></div>
+
+        <div class="progressBar">
+            <p>Task proggres:</p>
+            <input type="text" value="0" class="progress">
+        </div>
+
+        <div class="timeProgress">
+            <p>Time proggres:</p>
+            <input type="text" value="0" class="time">
+        </div>
+
+        <a href="#">
+            <div id="nextTask">
+                <p>Наступне завдання ➡️</p>
+            </div>
+        </a>
+
+    </div>
+</body>
+</html>
