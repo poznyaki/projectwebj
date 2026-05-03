@@ -90,14 +90,63 @@ $(document).ready(function () {
 
     $(".time").knob({
         'min': 0,
-        'max': 12,
-        'angleOffset': -75,
-        'angleArc': 150,
+        'max': 300,
+        'angleOffset': 0,
+        'angleArc': 360,
         'readOnly': true,
-        'lineCap': 'round',
+        'lineCap': 'butt',
+        'width': '100%',
         'displayInput': false,
         'thickness': 0.2,
         'bgColor': '#f5f6c2',
         'fgColor': '#80e887'
     })
+
+     $("#start").click(()=>{
+        $("#start").css('display', 'none')
+        $("#gameBoard").css('display', 'grid')
+        fillBoard()
+        $(".card").on('click', cardClicked)
+        startTime()
+     })
+
+     function fillBoard() {
+        let board = shuffle([...cards, ...cards])
+        for (let i = 0; i < board.length; i++){
+            let cardHTML = 
+            `
+            <div class="card" data-id="${board[i].id}">
+                <div class="front">ROBOCODE</div>
+                <div class="back">
+                    <img src="${board[i].img}" alt="${board[i].name}">
+                </div>
+            </div>
+            `
+            $("#gameBoard").append(cardHTML)
+        }
+     }
+     function startTime() {}
+
+     function shuffle(array) {
+        let counter = array.length
+        let temp
+        let index
+
+        while(counter > 0){
+            index = Math.floor(Math.random() * counter)
+            counter--
+
+            temp = array[counter]
+            array[counter] = array[index]
+            array[index] = temp
+        }
+        return array
+     }
+
+     function cardClicked(event) {
+        firstCard = $(this)
+        firstCard.toggleClass('flip')
+     }
+     function win() {}
+
 });

@@ -42,6 +42,50 @@ h1, h3, p, li {
     cursor: pointer;
     border: solid 2px #e6e880;
 }
+
+#gameBoard {
+    display: none;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+}
+#gameBoard > div {
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+.front,
+.back {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front {
+    background-color: #044302;
+    color: aliceblue;
+    font-weight: bold;
+}
+.back {
+    background-color: aliceblue;
+    color: cadetblue;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+.back img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+}
+.flip {
+    transform: rotateY(180deg);
+}
 .progressBar {
     position: fixed;
     top: 70vh;
@@ -50,6 +94,13 @@ h1, h3, p, li {
 }
 .progressBar p {
     text-align: center;
+}
+
+.timeProgress {
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    padding: 2.5vh;
 }
 
 #nextTask {
