@@ -144,8 +144,45 @@ $(document).ready(function () {
      }
 
      function cardClicked(event) {
-        firstCard = $(this)
-        firstCard.toggleClass('flip')
+
+        if(secondCard || $(this).hasClass('matched')){
+            return
+        }
+
+        if(!firstCard){
+            firstCard = $(this)
+            firstCard.addClass('flip')
+            return
+        }
+        
+
+        if(firstCard) {
+            secondCard = $(this)
+            secondCard.addClass('flip')
+
+            if(firstCard.attr('data-id') == secondCard.attr('data-id')){
+                firstCard.hasClass('matched')
+                secondCard.hasClass('matched')
+                
+                firstCard = null
+                secondCard = null
+                
+                progress++
+                $('.progress').val(progress).trigger('change')
+                if(progress == 12) {
+                    win()
+                }
+                return
+            }
+            else {
+                setTimeout(()=>{
+                    firstCard.removeClass('flip')
+                    secondCard.removeClass('flip')
+                    firstCard = null
+                    secondCard = null  
+                }, 500)
+            }
+        }
      }
      function win() {}
 
