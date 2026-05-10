@@ -6,6 +6,15 @@ $(document).ready(function () {
     let time
     let firstCard = null
     let secondCard = null
+
+    if(timeStorage.getItem("time")) {
+        time = parseInt(timeStorage.getItem("time"))
+    }
+    else {
+        time = 300
+        timeStorage.setItem("time", time)
+    }
+
     let cards = [
         {
             name : "php",
@@ -125,7 +134,24 @@ $(document).ready(function () {
             $("#gameBoard").append(cardHTML)
         }
      }
-     function startTime() {}
+     function startTime() {
+        time = 300
+        localStorage.setItem("time", time)
+        setInterval(()=>{
+            time = parseInt(localStorage.getItem("time")) - 1
+            $('.time').val(time).trigger('change')
+            
+            if(time <= 0) {
+                alertify.error("Час закінчився!")
+                setTimeout(()=> window.open("task2.html", "_self", false), 2000)
+            }
+            else {
+                localStorage.setItem("time", time)
+            }
+            console.log(time);
+            
+        }, 1000)
+     }
 
      function shuffle(array) {
         let counter = array.length
@@ -155,6 +181,9 @@ $(document).ready(function () {
             return
         }
         
+        if(firstCard[0] === $(this)[0]) {
+            return
+        }
 
         if(firstCard) {
             secondCard = $(this)
